@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: #f3f4f6;
+}
+
+.game {
+  text-align: center;
+  padding: 2rem;
+  background: #1e293b;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 360px;
+  max-width: 90vw;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  letter-spacing: 1px;
+}
+
+.mode-select {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #334155;
+  color: #cbd5e1;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.mode-btn.active {
+  background: #6366f1;
+  color: #fff;
+}
+
+.status {
+  min-height: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 auto 1.25rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: #0f172a;
+  border: 2px solid #334155;
+  border-radius: 10px;
+  color: #38bdf8;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.cell:hover:not(:disabled) {
+  background: #1e2a44;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+}
+
+.cell.o {
+  color: #f472b6;
+}
+
+.cell.win {
+  background: #166534;
+  border-color: #22c55e;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 0.75rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.score strong {
+  font-size: 1.25rem;
+  color: #f3f4f6;
+  margin-top: 0.15rem;
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset-btn:hover {
+  background: #dc2626;
+}
